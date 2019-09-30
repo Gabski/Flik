@@ -1,3 +1,5 @@
+/*! Flik v1.0.1 | (c) Gabski and other contributors | Released under the MIT license */
+
 (function (global) {
 	var Flik = function (selector, content) {
 		return new Flik.init(selector, content);
@@ -17,6 +19,11 @@
 	}
 
 	Flik.prototype = {
+		log: function () {
+			console.log(this);
+			return this;
+		},
+
 		update: function (content) {
 			this.content = content;
 
