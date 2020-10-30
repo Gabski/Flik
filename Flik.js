@@ -48,13 +48,18 @@
             for (var i = 0; i < this.content.length; i++) {
                 var res = this.template;
 
-                for (var a = 0; a < table.length; a++) {
-                    let name = table[a].replace('{', '').replace('}', '');
-                    var property = getProperty(name, this.content[i]);
-                    if (property !== undefined) {
-                        res = res.replace(table[a], property);
+
+                if (table) {
+                    for (var a = 0; a < table.length; a++) {
+                        let name = table[a].replace('{', '').replace('}', '');
+                        var property = getProperty(name, this.content[i]);
+                        if (property !== undefined) {
+                            res = res.replace(table[a], property);
+                        }
                     }
                 }
+
+
                 this.element.innerHTML += res;
             }
 
